@@ -17,7 +17,7 @@ export GC_WEBHOOK_SECRET=''
 rails server 
 ```
 
-Now you can access the application using [Application link](http://127.0.0.1/customers) 
+Now you can access the application using [Application link](http://127.0.0.1:3000/customers) 
 
 
 ### Demo
