@@ -1,0 +1,21 @@
+<div>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://www.workbooks.com/wp-content/uploads/gocardless-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="40" style="max-height:13.75rem">
+    </a>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <b style="margin-top: 10px"><%= link_to "Customers", { controller: "customers", action: "index" }, class: 'navbar-item', style: 'margin-left: 20px' %></b>
+        <a class="navbar-item">
+          <b style="margin-top: 10px"><%= link_to "Payments", { controller: "payments", action: "list" }, class: 'navbar-item', style: 'margin-left: -20px' %></b>
+        </a>
+        <a class="navbar-item">
+          <b style="margin-top: 10px"><%= link_to "Events", { controller: "events", action: "list" }, class: 'navbar-item', style: 'margin-left: -20px' %></b>
+        </a>
+      </div>
+  </div>
+</nav>
+  <hr style="margin: 2px">
+</div>

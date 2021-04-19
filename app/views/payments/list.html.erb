@@ -1,0 +1,43 @@
+<div class="container">
+  <h4 class="title is-4">Payments</h4>
+  <hr>
+  <% if @customer_id -%>
+      <%= link_to "Create Payment", {controller: "payments", action: "create", customer_id: params[:customer_id]}, class: 'button is-info' %>
+  <% end -%>
+  <table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+    <tr>
+      <th>Status</th>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Charged</th>
+      <th>Paid out</th>
+      <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td>
+          <b><%= payment.status.titleize %></b>
+        </td>
+        <td>
+          <%= payment.id %>
+        </td>
+        <td>
+          <%= payment.description %>
+        </td>
+        <td>
+          <%= Date.parse(payment.charge_date).strftime("%d.%m.%Y") %>
+        </td>
+        <td>
+          <%= Date.parse(payment.created_at).strftime("%d.%m.%Y") %>
+        </td>
+        <td>
+          <%= (payment.amount/100).round(2) %> <%= payment.currency %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

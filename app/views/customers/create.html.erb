@@ -1,0 +1,32 @@
+<div class="container">
+  <h4 class="title is-4">Create Customer</h4>
+  <hr>
+  <%= form_for :create_customer, :url => {:action => "create_customer"} do |f| %>
+  <div class="field">
+    <label class="label">Given Name</label>
+    <div class="control">
+      <%= f.text_field :given_name, class: 'input is-small' %>
+    </div>
+  </div>
+
+    <div class="field">
+      <label class="label">Family Name</label>
+      <div class="control">
+        <%= f.text_field :family_name, class: 'input is-small' %>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <%= f.text_field :email, class: 'input is-small' %>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Language</label>
+      <div class="control">
+        <%= f.text_field :language, class: 'input is-small' %>
+      </div>
+    </div>
+  <%= f.button :submit, class: 'button is-success is-outlined' %>
+<% end %>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <h4 class="title is-4">Events</h4>
+  <hr>
+  <table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+    <tr>
+      <th>Resource</th>
+      <th>ID</th>
+      <th>Event</th>
+      <th>Time</th>
+      <th>Source</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td>
+          <b><%= event.resource_type.titleize %></b>
+        </td>
+        <td>
+          <%= event.event_id %>
+        </td>
+        <td>
+          <%= event.action.titleize %>
+        </td>
+        <td>
+          <%= event.created_at %>
+        </td>
+        <td>
+          <%= event.source %>
+        </td>
+        <td>
+          <%= event.description %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

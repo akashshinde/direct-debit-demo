@@ -1,0 +1,45 @@
+<div class="container">
+  <h4 class="title is-4">Customers</h4>
+  <hr>
+  <div class="field is-grouped">
+    <p class="control">
+        <%= link_to "Create Customer", { controller: "customers", action: "create" }, class: 'button is-primary' ,style: 'margin-bottom: 10px'%>
+    </p>
+  </div>
+  <div class="columns">
+    <div class="column is-full">
+      <table class="table is-striped is-hoverable is-fullwidth">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @customers.each do |customer| %>
+          <tr>
+            <td>
+              <b><%= customer.given_name.titleize %> <%= customer.family_name.titleize %></b>
+            </td>
+            <td>
+              <%= customer.email %>
+            </td>
+            <td>
+              Active
+            </td>
+            <td>
+              <%= customer.created_at.to_date %>
+            </td>
+            <td>
+              <div class="button is-ghost"><%= link_to 'Payments', { controller: 'payments', action: 'list', customer_id: customer.id } %></div>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
